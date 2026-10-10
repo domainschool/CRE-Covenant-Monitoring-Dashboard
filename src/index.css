@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-warm: #FAFAF9;
+    --card-bg: #FFFFFF;
+    --text-primary: #1C1917;
+    --text-secondary: #78716C;
+    --border-warm: #E7E5E4;
+  }
+
+  body {
+    background-color: #FAFAF9;
+    color: #1C1917;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, .font-editorial {
+    font-family: 'Fraunces', 'Newsreader', 'Playfair Display', Georgia, serif;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Soft Organic Card & Button Styles */
+.organic-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E7E5E4;
+  border-radius: 1.75rem; /* rounded-3xl */
+  box-shadow: 0 10px 25px -5px rgba(41, 37, 36, 0.04), 0 8px 10px -6px rgba(41, 37, 36, 0.02);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.organic-card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 35px -8px rgba(41, 37, 36, 0.07), 0 10px 15px -5px rgba(41, 37, 36, 0.03);
+  border-color: #D6D3D1;
+}
+
+.organic-pill {
+  border-radius: 9999px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  transition: all 0.2s ease;
+}
+
+/* Custom Soft Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F5F4;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D6D3D1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A8A29E;
+}
+
+/* Print Styles for Legal Default Notices */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .organic-card {
+    border: none !important;
+    box-shadow: none !important;
+  }
+}
